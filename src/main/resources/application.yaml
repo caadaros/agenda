@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: agenda
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@uoy3d3nz6td5w21k_low?TNS_ADMIN=C:/Users/usuario/Downloads/Wallet_UOY3D3NZ6TD5W21K
+    username: ADMIN
+    password: FullStack-001
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8085
+
+# Eureka: se registra con el nombre "agenda" y descubre otros servicios por nombre
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
