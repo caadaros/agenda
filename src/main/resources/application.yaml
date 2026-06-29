@@ -3,32 +3,31 @@ spring:
     name: agenda
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@uoy3d3nz6td5w21k_low?TNS_ADMIN=C:/Users/Usuario/proyectosSpringBoot/1.Peluqueria/agenda/Wallet_UOY3D3NZ6TD5W21K
-    username: ADMIN
-    password: FullStack-001
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
 
 server:
-  port: 8085
+  port: ${PORT:8085}
 
-# Eureka: se registra con el nombre "agenda" y descubre otros servicios por nombre
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
   instance:
     prefer-ip-address: true
+    hostname: ${RENDER_EXTERNAL_HOSTNAME:localhost}
 
 springdoc:
   api-docs:
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
-
