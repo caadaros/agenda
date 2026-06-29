@@ -3,7 +3,7 @@ spring:
     name: agenda
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@uoy3d3nz6td5w21k_low?TNS_ADMIN=C:/Users/usuario/Downloads/Wallet_UOY3D3NZ6TD5W21K
+    url: jdbc:oracle:thin:@uoy3d3nz6td5w21k_low?TNS_ADMIN=C:/Users/Usuario/proyectosSpringBoot/1.Peluqueria/agenda/Wallet_UOY3D3NZ6TD5W21K
     username: ADMIN
     password: FullStack-001
   jpa:
