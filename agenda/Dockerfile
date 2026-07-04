@@ -31,7 +31,7 @@ RUN apk add --no-cache wget
 COPY --from=builder /app/target/*.jar app.jar
 
 #Escucha y recibe peticiones en el puerto 8080
-EXPOSE 8080
+EXPOSE ${PORT}
 
 # ejecuta el siguiente comando cuando se encienda (entorno, parámetro, archivo final)
 ENTRYPOINT ["java", "-jar", "app.jar"]
