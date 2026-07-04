@@ -9,7 +9,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
@@ -24,8 +24,10 @@ eureka:
       defaultZone: ${EUREKA_URL:https://eureka-hvy0.onrender.com/eureka/}
   instance:
     prefer-ip-address: false
-    hostname: ${RENDER_EXTERNAL_HOSTNAME}
-    instance-id: ${spring.application.name}:${random.value}
+    # 2. CAMBIADO: Reemplazamos RENDER_EXTERNAL_HOSTNAME por nuestra variable interna
+    hostname: ${RENDER_INTERNAL_HOST:localhost} 
+    # 3. CAMBIADO: El ID de instancia debe incluir el hostname para que Eureka diferencie las URLs internas
+    instance-id: ${spring.application.name}:${eureka.instance.hostname}:${server.port}
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
 
