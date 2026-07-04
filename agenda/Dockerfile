@@ -29,6 +29,7 @@ RUN apk add --no-cache wget
 # destro de buider copia el.jar (indica ruta) y lo pega en app.jar
 # sirve para dejar atrás la basura y sólo dejar el .jar final
 COPY --from=builder /app/target/*.jar app.jar
+COPY Wallet_* ./Wallet/
 
 #Escucha y recibe peticiones en el puerto 8080
 EXPOSE ${PORT}
