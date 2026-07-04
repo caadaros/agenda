@@ -24,7 +24,7 @@ eureka:
       defaultZone: ${EUREKA_URL:https://eureka-hvy0.onrender.com/eureka/}
   instance:
     prefer-ip-address: false
-    hostname: ${EUREKA_INSTANCE_HOSTNAME:agenda.onrender.com}
+    hostname: ${RENDER_EXTERNAL_HOSTNAME}
     instance-id: ${spring.application.name}:${random.value}
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
