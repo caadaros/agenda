@@ -1,4 +1,4 @@
-package com.peluqueria.agenda;
+package com.peluqueria.agenda.TestService;
 
 import com.peluqueria.agenda.Model.Agenda;
 import com.peluqueria.agenda.Repository.AgendaRepository;
