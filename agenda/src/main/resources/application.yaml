@@ -23,7 +23,7 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_URL:https://eureka-hvy0.onrender.com/eureka/}
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
     # 2. CAMBIADO: Reemplazamos RENDER_EXTERNAL_HOSTNAME por nuestra variable interna
     hostname: ${RENDER_INTERNAL_HOST:localhost} 
     # 3. CAMBIADO: El ID de instancia debe incluir el hostname para que Eureka diferencie las URLs internas
